@@ -1,32 +1,25 @@
-export function title({value}) {
-    return `
-        <div class="row">
-            <div class="col-sm">
-                <h1>${value}</h1>
-            </div>
-        </div>
-    `
+import {row, col} from "./utils";
+
+function title({value}) {
+    return row(col(`<h1>${value}</h1>`))
 }
 
-export function text({value}) {
-    return `
-        <div class="row">
-            <div class="col-sm">
-                <p>${value}</p>
-            </div>
-        </div>
-    `
+function text({value}) {
+    return row(col(`<p>${value}</p>`))
 }
 
-export function columns({value}) {
-    const columns = value.reduce((acc, val) => acc + `<div class="col-sm"><p>${val}</p></div>`, '');
-    return `<div class="row">${columns}</div>`
+function columns({value}) {
+    const columns = value.map(col).join('');
+    return row(columns)
 }
 
-export function image({value}) {
-    return `
-        <div class="row">
-            <img src="${value}" alt="Image not found :("/>
-        </div>
-    `
+function image({value}) {
+    return row(`<img src="${value}" alt="Image not found :("/>`)
+}
+
+export const templates = {
+    title,
+    text,
+    columns,
+    image
 }
