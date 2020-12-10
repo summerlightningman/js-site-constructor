@@ -4,7 +4,7 @@
   "description": "my portfolio :)",
   "main": "src/script.js",
   "scripts": {
-    "serve": "parcel src/index.html"
+    "serve": "parcel ./src/index.html -p 4200 --open"
   },
   "repository": {
     "type": "git",
