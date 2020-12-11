@@ -2,7 +2,6 @@ import {col, css, row} from "../utils";
 
 class Block {
     constructor(value, options) {
-        this.type = type;
         this.value = value;
         this.options = options;
     }
