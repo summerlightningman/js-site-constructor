@@ -18,7 +18,7 @@ export class TitleBlock extends Block {
 
     toHTML() {
         const {tag = 'h1', styles} = this.options;
-        return row(col(`<${tag}>${value}</${tag}>`), css(styles))
+        return row(col(`<${tag}>${this.value}</${tag}>`), css(styles))
     }
 }
 
@@ -51,7 +51,7 @@ export class ImageBlock extends Block {
     }
 
     toHTML() {
-        const {styles, alt = '', imageStyles} = options;
+        const {styles, alt = '', imageStyles} = this.options;
         return row(`<img src="${this.value}" alt="${alt}" style="${css(imageStyles)}"/>`, css(styles))
     }
 }
