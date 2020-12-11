@@ -21,21 +21,11 @@ export class TitleBlock extends Block {
         const {tag = 'h1', styles} = this.options;
         return row(col(`<${tag}>${value}</${tag}>`), css(styles))
     }
-
-    toHTML() {
-        const {tag = 'h1', styles} = this.options;
-        return row(col(`<${tag}>${value}</${tag}>`), css(styles))
-    }
 }
 
 export class TextBlock extends Block {
     constructor(value, options) {
         super(value, options);
-    }
-
-    toHTML() {
-        const {styles} = this.options;
-        return row(col(`<p>${this.value}</p>`), css(styles))
     }
 
     toHTML() {
@@ -54,22 +44,11 @@ export class ColumnsBlock extends Block {
         const columns = this.value.map(col).join('');
         return row(columns, css(styles))
     }
-
-    toHTML() {
-        const {styles} = this.options;
-        const columns = this.value.map(col).join('');
-        return row(columns, css(styles))
-    }
 }
 
 export class ImageBlock extends Block {
     constructor(value, options) {
         super(value, options);
-    }
-
-    toHTML() {
-        const {styles, alt = '', imageStyles} = options;
-        return row(`<img src="${this.value}" alt="${alt}" style="${css(imageStyles)}"/>`, css(styles))
     }
 
     toHTML() {
