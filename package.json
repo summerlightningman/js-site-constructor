@@ -2,7 +2,7 @@
   "name": "js-site-constructor",
   "version": "1.0.0",
   "description": "my portfolio :)",
-  "main": "src/script.js",
+  "main": "src/index.js",
   "scripts": {
     "serve": "parcel ./src/index.html -p 4200 --open",
     "build": "parcel build ./src/index.html --no-source-maps"
