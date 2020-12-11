@@ -4,9 +4,5 @@ import './styles/style.css';
 
 const site = document.querySelector('#site');
 
-model.forEach(block => {
-    const toHTML = templates[block.type];
-    if (toHTML)
-        site.insertAdjacentHTML('beforeend', toHTML(block));
-});
+model.forEach(block => site.insertAdjacentHTML('beforeend', block.toHTML()));
 
