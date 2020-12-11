@@ -1,8 +1,6 @@
-import {model} from './model';
-import {templates} from "./templates";
+import {Site} from "./classes/site";
 import './styles/style.css';
+import {model} from "./model";
 
-const site = document.querySelector('#site');
-
-model.forEach(block => site.insertAdjacentHTML('beforeend', block.toHTML()));
-
+const site = new Site('#site');
+site.render(model);
